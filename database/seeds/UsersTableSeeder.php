@@ -15,6 +15,7 @@ class UsersTableSeeder extends Seeder
         User::truncate();
         User::create(array('name' => 'Administrator',
                            'email' => 'admin@ticketsys.test', 
-                           'password' => bcrypt('secret')));
+                           'password' => bcrypt('secret'),
+                           'role' => 2));
     }
 }

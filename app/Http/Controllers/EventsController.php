@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class EventsController extends Controller
 {
+    // Middleware
+    public function __construct() {
+        // only Admins have access
+        $this->middleware('admin')->only(['create','store']);
+    }
+    
     /**
      * Display a listing of the resource.
      *

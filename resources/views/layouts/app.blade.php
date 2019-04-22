@@ -34,7 +34,9 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li><a class="nav-link" href="/event">Events</a></li>
-                        <li><a class="nav-link" href="{{ url('event/create') }}">Add a new event</a></li>
+                        @if ( !Auth::guest() && Auth::user()->isAdmin() )
+                            <li><a class="nav-link" href="/admin">Admin</a></li>
+                        @endif                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->

@@ -14,6 +14,10 @@
                         </div>
                     @endif
 
+                    @foreach($errors->all() as $message)
+                        <p class="has-error">{{ $message }}</p>
+                    @endforeach  
+                    
                     <h4>Hello and welcome to our events ticket sale system, {{ Auth::user()->name }}</h4>
                 </div>
             </div>

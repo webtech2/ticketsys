@@ -17,3 +17,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('event', 'EventsController', ['except' => ['edit', 'update', 'destroy']]);    
+Route::get('admin', 'AdminController');
+Route::resource('category', 'CategoryController', ['only' => ['create', 'store']]);
+Route::resource('ticket', 'TicketsController', ['only' => ['create', 'store']]); 
