@@ -20,3 +20,5 @@ Route::resource('event', 'EventsController', ['except' => ['edit', 'update', 'de
 Route::get('admin', 'AdminController');
 Route::resource('category', 'CategoryController', ['only' => ['create', 'store']]);
 Route::resource('ticket', 'TicketsController', ['only' => ['create', 'store']]); 
+Route::get('events/search','EventsController@getSearch');
+Route::post('events/search','EventsController@postSearch');

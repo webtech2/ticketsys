@@ -113,4 +113,15 @@ class EventsController extends Controller
     {
         //
     }
+    
+    // AJAX view
+    public function getSearch() {
+        return view('search');
+    }
+    // AJAX search
+    public function postSearch(Request $request) {
+        return Event::where('name', 'LIKE', '%'.$request->get('search').'%')
+                ->orWhere('description', 'LIKE', '%'.$request->get('search').'%')->get();
+    }
+    
 }
