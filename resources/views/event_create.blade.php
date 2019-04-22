@@ -54,7 +54,7 @@
                     <div class="form-group row">
                     {!! Form::label('rating', 'Rating', ['class' => 'col-md-4 control-label text-md-right']) !!}
                     <div class="col-md-6">
-                    {!! Form::number('rating', '', ['class' => 'form-control']) !!}
+                    {!! Form::number('rating', '', ['class' => 'form-control', 'step' => '0.1', 'min' => 0, 'max' => 10]) !!}
                     </div>
                     </div>
                     <div class="form-group row">
