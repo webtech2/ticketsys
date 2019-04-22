@@ -38,6 +38,18 @@ class EventsController extends Controller
     {
         $data = $request->all();
         
+        $rules = $rules = array(
+            'name' => 'required|min:3|max:191',
+            'description' => 'required|min:3',
+            'location' => 'required|min:3|max:191',
+            'category' => 'required|exists:categories,id',
+            'rating' => 'required|numeric|min:0|max:10',
+            'start_time' => 'required|date|after_or_equal:today',
+            'rows' => 'required|integer|min:1',
+            'seats' => 'required|integer|min:1',
+        );        
+        $this->validate($request, $rules);   
+        
         $event = new Event();
         $event->name = $data['name'];
         $event->description = $data['description'];
