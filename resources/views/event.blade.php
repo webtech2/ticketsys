@@ -12,6 +12,10 @@
                 <p class="card-text">Rating: {{ $event->rating }}</p>
                 <p class="card-text">Location: {{ $event->location }}</p>
                 <div class="card-text">
+                    @php
+                        $tickets = $event->tickets;
+                    @endphp
+                    @if(count($tickets) == $event->rows * $event->seats)
                     <table>
                         <tr>
                             <td></td>
@@ -19,9 +23,6 @@
                             <td>{{ $s }}.</td>  
                             @endfor
                         </tr>
-                    @php
-                        $tickets = $event->tickets;
-                    @endphp
                     @for ($r = 1; $r <= $event->rows; $r++)
                         <tr><td>{{ $r }}.</td> 
                         @for ($s = 1; $s <= $event->seats; $s++) 
@@ -30,6 +31,7 @@
                         </tr>
                     @endfor
                     </table>
+                    @endif
                 </div>
                 </div>
             </div>

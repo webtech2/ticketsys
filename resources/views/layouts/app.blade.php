@@ -34,6 +34,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li><a class="nav-link" href="/event">Events</a></li>
+                        <li><a class="nav-link" href="{{ url('event/create') }}">Add a new event</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

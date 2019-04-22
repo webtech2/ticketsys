@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Event;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,7 @@ class EventsController extends Controller
      */
     public function create()
     {
-        //
+        return view('event_create', array('categories' => Category::all()->sortBy('name')->pluck('name','id')));
     }
 
     /**
@@ -35,7 +36,19 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        
+        $event = new Event();
+        $event->name = $data['name'];
+        $event->description = $data['description'];
+        $event->category()->associate(Category::find($data['category']));
+        $event->rating = $data['rating'];
+        $event->start_time = $data['start_time'];
+        $event->location = $data['location'];
+        $event->rows = $data['rows'];
+        $event->seats = $data['seats'];
+        $event->save();
+        return redirect()->action('EventsController@show', array($event->id))->withMessage('Successfully added a new event!');
     }
 
     /**
