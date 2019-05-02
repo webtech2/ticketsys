@@ -36,6 +36,8 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li><a class="nav-link" href="/event">Events</a></li>
+                        <li><a class="nav-link" href="/orders">Orders</a></li>
+                        <li><a class="nav-link" href="/cart">Cart</a></li>
                         @if ( !Auth::guest() && Auth::user()->isAdmin() )
                             <li><a class="nav-link" href="/admin">Admin</a></li>
                         @endif                        

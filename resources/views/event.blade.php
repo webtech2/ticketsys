@@ -26,7 +26,7 @@
                     @for ($r = 1; $r <= $event->rows; $r++)
                         <tr><td>{{ $r }}.</td> 
                         @for ($s = 1; $s <= $event->seats; $s++) 
-                        <td title="Row {{ $r }} Seat {{ $s }}"><a class="btn btn-outline-primary btn-sm" href='{{ url('ticket', $tickets->get(($r-1)*($event->seats)+$s-1)->id) }}'>{{$tickets->get(($r-1)*($event->seats)+$s-1)->price}}&euro;</a>
+                        <td title="Row {{ $r }} Seat {{ $s }}"><a class="btn btn-outline-primary btn-sm" href='{{ url('cart/add', $tickets->get(($r-1)*($event->seats)+$s-1)->id) }}'>{{$tickets->get(($r-1)*($event->seats)+$s-1)->price}}&euro;</a>
                         @endfor
                         </tr>
                     @endfor

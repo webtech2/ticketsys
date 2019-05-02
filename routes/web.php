@@ -22,3 +22,6 @@ Route::resource('category', 'CategoryController', ['only' => ['create', 'store']
 Route::resource('ticket', 'TicketsController', ['only' => ['create', 'store']]); 
 Route::get('events/search','EventsController@getSearch');
 Route::post('events/search','EventsController@postSearch');
+Route::get('cart', 'CartController@index');
+Route::get('cart/add/{id}', 'CartController@add');
+Route::get('cart/remove/{id}', 'CartController@remove');
