@@ -1,11 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Category;
 use App\Event;
 use Illuminate\Http\Request;
-
 class EventsController extends Controller
 {
     // Middleware
@@ -23,7 +20,6 @@ class EventsController extends Controller
     {
         return view('events', array('title' => 'Events', 'events' => Event::orderBy('start_time')->get()));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -33,7 +29,6 @@ class EventsController extends Controller
     {
         return view('event_create', array('categories' => Category::all()->sortBy('name')->pluck('name','id')));
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -68,7 +63,6 @@ class EventsController extends Controller
         $event->save();
         return redirect()->action('EventsController@show', array($event->id))->withMessage('Successfully added a new event!');
     }
-
     /**
      * Display the specified resource.
      *
@@ -79,7 +73,6 @@ class EventsController extends Controller
     {
         return view('event', array('event' => Event::findOrFail($id)));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -90,7 +83,6 @@ class EventsController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -102,7 +94,6 @@ class EventsController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
