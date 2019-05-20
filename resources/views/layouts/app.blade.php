@@ -35,13 +35,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li><a class="nav-link" href="/event">Events</a></li>
-                        <li><a class="nav-link" href="/orders">Orders</a></li>
-                        <li><a class="nav-link" href="/cart">Cart</a></li>
+                        <li><a class="nav-link" href="/event">@lang('messages.events')</a></li>
+                        <li><a class="nav-link" href="/orders">@lang('messages.orders')</a></li>
+                        <li><a class="nav-link" href="/cart">@lang('messages.cart')</a></li>
                         @if ( !Auth::guest() && Auth::user()->isAdmin() )
-                            <li><a class="nav-link" href="/admin">Admin</a></li>
+                            <li><a class="nav-link" href="/admin">@lang('messages.admin_panel')</a></li>
                         @endif                        
-                        <li><a class="nav-link" href="/events/search">Search</a></li>
+                        <li><a class="nav-link" href="/events/search">@lang('messages.search')</a></li>
+                        <li><a class="nav-link" href="/lang/lv">LV</a></li>
+                        <li><a class="nav-link" href="/lang/en">EN</a></li>                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -49,11 +51,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('messages.login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('messages.register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -66,7 +68,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('messages.logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

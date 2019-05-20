@@ -5,16 +5,16 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                <h4 class="card-title">Selected tickets</h4>                
+                <h4 class="card-title">@lang('messages.selected_tickets')</h4>                
                 <div class="card-text">
                     <table class="table table-hover">
                         <thead><tr class="table-primary">
-                            <th scope="col">Event</th>
-                            <th scope="col">Start Time</th>
-                            <th scope="col">Location</th>
-                            <th scope="col">Row</th>
-                            <th scope="col">Seat</th>
-                            <th scope="col">Price</th>
+                            <th scope="col">@lang('messages.event')</th>
+                            <th scope="col">@lang('messages.start_time')</th>
+                            <th scope="col">@lang('messages.location')</th>
+                            <th scope="col">@lang('messages.row')</th>
+                            <th scope="col">@lang('messages.seat')</th>
+                            <th scope="col">@lang('messages.price')</th>
                             <th scope="col"></th>
                         </tr></thead>
                         <tbody>

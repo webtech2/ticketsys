@@ -7,10 +7,10 @@
                 <div class="card-body">
                 <h4 class="card-title">{{ $event->name }}, {{$event->category->name}}</h4>
                 <p class="card-text">{{ $event->description }}</p>
-                <p class="card-text">Start time: {{ $event->formatTime() }}</p>
-                <p class="card-text">Category: {{ $event->category->name }}</p>
-                <p class="card-text">Rating: {{ $event->rating }}</p>
-                <p class="card-text">Location: {{ $event->location }}</p>
+                <p class="card-text">@lang('messages.start_time'): {{ $event->formatTime() }}</p>
+                <p class="card-text">@lang('messages.category'): {{ $event->category->name }}</p>
+                <p class="card-text">@lang('messages.rating'): {{ $event->rating }}</p>
+                <p class="card-text">@lang('messages.location'): {{ $event->location }}</p>
                 <div class="card-text">
                     @php
                         $tickets = $event->tickets;

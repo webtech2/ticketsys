@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Welcome</div>
+                <div class="card-header">@lang('messages.welcome')</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -18,7 +18,7 @@
                         <p class="has-error">{{ $message }}</p>
                     @endforeach  
                     
-                    <h4>Hello and welcome to our events ticket sale system, {{ Auth::user()->name }}</h4>
+                    <h4>@lang('messages.hello_welcome'), {{ Auth::user()->name }}</h4>
                 </div>
             </div>
         </div>

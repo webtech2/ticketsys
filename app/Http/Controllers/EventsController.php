@@ -18,7 +18,7 @@ class EventsController extends Controller
      */
     public function index()
     {
-        return view('events', array('title' => 'Events', 'events' => Event::orderBy('start_time')->get()));
+        return view('events', array('title' => __('messages.events'), 'events' => Event::orderBy('start_time')->get()));
     }
     /**
      * Show the form for creating a new resource.

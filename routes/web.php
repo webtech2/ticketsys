@@ -25,3 +25,4 @@ Route::post('events/search','EventsController@postSearch');
 Route::get('cart', 'CartController@index');
 Route::get('cart/add/{id}', 'CartController@add');
 Route::get('cart/remove/{id}', 'CartController@remove');
+Route::get('lang/{locale}','LanguageController');

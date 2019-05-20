@@ -5,12 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Add a new ticket</div>
+                <div class="card-header">@lang('messages.add_ticket')</div>
                 <div class="card-body">
                     {!! Form::open(['action' => 'TicketsController@store', 'class' => 'form-horizontal']) !!}
 
                     <div class="form-group row">
-                    {!! Form::label('event', 'Event', ['class' => 'col-md-4 control-label text-md-right']) !!}
+                    {!! Form::label('event', __('messages.event'), ['class' => 'col-md-4 control-label text-md-right']) !!}
                     <div class="col-md-6">
                     {!! Form::select('event', $events, '', ['class' => 'form-control '.($errors->has('event') ? ' is-invalid' : '' )]) !!}
                     @if ($errors->has('event'))
@@ -21,7 +21,7 @@
                     </div>
                     </div>                    
                     <div class="form-group row">
-                    {!! Form::label('row', 'Row',['class' => 'col-md-4 control-label text-md-right']) !!}
+                    {!! Form::label('row', __('messages.row'),['class' => 'col-md-4 control-label text-md-right']) !!}
                     <div class="col-md-6">
                     {!! Form::number('row', '', ['class' => 'form-control '.($errors->has('row') ? ' is-invalid' : '' )]) !!}
                     @if ($errors->has('row'))
@@ -32,7 +32,7 @@
                     </div>
                     </div>
                     <div class="form-group row">
-                    {!! Form::label('seat', 'Seat',['class' => 'col-md-4 control-label text-md-right']) !!}
+                    {!! Form::label('seat', __('messages.seat'),['class' => 'col-md-4 control-label text-md-right']) !!}
                     <div class="col-md-6">
                     {!! Form::number('seat', '', ['class' => 'form-control '.($errors->has('seat') ? ' is-invalid' : '' )]) !!}
                     @if ($errors->has('seat'))
@@ -44,7 +44,7 @@
                     </div>
                     
                     <div class="form-group row">
-                    {!! Form::label('price', 'Price',['class' => 'col-md-4 control-label text-md-right']) !!}
+                    {!! Form::label('price', __('messages.price'),['class' => 'col-md-4 control-label text-md-right']) !!}
                     <div class="col-md-6">
                     {!! Form::number('price', '', ['class' => 'form-control '.($errors->has('price') ? ' is-invalid' : '' ), 'step' => '0.01', 'min' => 0]) !!}
                     @if ($errors->has('price'))
@@ -57,7 +57,7 @@
 
                     <div class="form-group row">
                     <div class="col-md-6 offset-md-4">
-                    {!! Form::submit('Create', ['class' => 'btn btn-primary']) !!}
+                    {!! Form::submit(__('messages.create'), ['class' => 'btn btn-primary']) !!}
                     </div>
                     </div>
 
